@@ -206,4 +206,72 @@ function Greeting({ name }) {
   return <h1>Hello, {name}</h1>
 }
 ```
+## There is no need for express or other frameworks? be brief
 
+With Next.js App Router + Server Components, you don’t need Express or other backend frameworks for:
+
+Fetching data (APIs, databases)
+
+Rendering HTML
+
+Handling server logic
+
+🧠 Next.js acts as both frontend + backend.
+
+But you can add Express if:
+
+You need custom routing/middleware
+
+You have existing Express APIs to reuse
+
+👉 For most modern apps: Next.js alone is enough.
+
+### How to find if the component is React Server Comp?
+
+| Component            | What to Look For                | Runs Where          |
+| -------------------- | ------------------------------- | ------------------- |
+| **Server Component** | ❌ No `'use client'` at top      | On server only      |
+| **Client Component** | ✅ Has `'use client'` at the top | In browser (client) |
+
+
+If it uses, useState, useEffect, useRef, etc. → needs 'use client'
+
+If it uses, Async functions, database/API fetch, rendering → can be server component
+
+## How does SPAs route
+
+✅ SPAs can still have router pages, using libraries like:
+
+React Router in plain React
+
+Next.js App Router (which also supports SPA-like behavior)
+
+But unlike multi-page apps, SPAs don’t reload the page — they change routes client-side.
+
+👉 So: SPAs have pages, but routing is handled in JavaScript, not by the browser.
+
+```
+import Link from 'next/link'
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Home</h1>
+      <Link href="/products">Go to Products</Link>
+    </div>
+  )
+}
+```
+
+🧠 What happens:
+✅ Only the changed part of the page is fetched/rendered.
+
+✅ No full browser reload
+
+✅ Feels instant (like an SPA)
+
+✅ Preserves state in components (when possible)
+
+So:
+➡️ Next.js App Router = File-based routing with SPA behavior
+➡️ Use <Link> instead of <a> to stay in SPA mode

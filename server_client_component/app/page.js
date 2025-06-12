@@ -1,6 +1,7 @@
 import ServerInfo from './components/ServerInfo'
 import ClientButton from './components/ClientButton'
 import Page from './hooks/page'
+import Link from 'next/link'
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <ServerInfo />
       <ClientButton />
       <Page />
+      <Link href="/products">Here I come Products</Link>
     </main>
   )
 }
