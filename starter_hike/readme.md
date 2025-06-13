@@ -1,20 +1,20 @@
-Use this starter if you want to give Code Hike v1.0 a try:
+The project was used for diving into the details of what each files are 
+doing. 
 
-```bash
-npx create-next-app -e https://github.com/code-hike/v1-starter
-```
+The key files outside the App are:
 
-Or you can also try it on:
+- next.config.mjs
 
-- [StackBlitz](https://stackblitz.com/github/code-hike/v1-starter?file=app%2Fpage.mdx)
-- [CodeSandbox](https://codesandbox.io/s/github/code-hike/v1-starter?file=app%2Fpage.mdx)
+- mdx-components-tsx
 
-It includes:
+The Files that are common to Routes:
 
-- Next.js 15 with app router
-- Tailwind CSS + @tailwindcss/typography
-- TypeScript
-- MDX
-- Code Hike v1.0
+- layout.tsx
 
-For more information, check out the [Code Hike docs](https://codehike.org/docs).
+- global.css
+
+- components folder with the tsx files for annotations, and extracting blocks
+
+The files required for each Route:
+
+- page.mdx (Any other file name, then the route will throw 404 error)
