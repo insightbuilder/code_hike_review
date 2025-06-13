@@ -20,7 +20,6 @@ export default function RootLayout({
       className="dark bg-zinc-950 prose prose-invert mx-auto py-24 max-w-5xl px-4"
     >
       <body className={inter.className}>
-        <h1>This is a manual entry</h1>
         {children}
         </body>
     </html>

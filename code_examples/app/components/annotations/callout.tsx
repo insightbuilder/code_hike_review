@@ -15,9 +15,6 @@ export const callout: AnnotationHandler = {
   },
   Block: ({ annotation, children }) => {
     const { column } = annotation.data
-    console.log(column)
-    console.log("annot",annotation)
-    console.log("children",children)
     return (
       <>
         {children}
@@ -29,7 +26,7 @@ export const callout: AnnotationHandler = {
             style={{ left: `${column}ch` }}
             className="absolute border-l border-t border-current w-2 h-2 rotate-45 -translate-y-1/2 -top-[1px] bg-zinc-800"
           />
-          {annotation.query} & This is manually entered text
+          {annotation.query}
         </div>
       </>
     )
